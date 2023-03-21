@@ -1,0 +1,58 @@
+<div class="glinz-categories-list">
+    <div class="glinz-categories-list_header">
+      <h1>Categories List</h1>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente voluptatem, voluptas labore totam quos id sunt, perferendis odio pariatur nemo tenetur ducimus suscipit officiis aliquam! Porro modi itaque ut ipsam ducimus voluptate aliquid, aperiam pariatur sapiente, ipsum ab animi libero. Pariatur beatae sequi quibusdam </div>
+    </div>
+    <div class="glinz-categories-list_content">
+      <div class="glinz-categories-list_content--top">
+        <div class="glinz-categories-search">
+  
+        </div>
+        <button mat-stroked-button (click)="onCreateClick()" class="glinz-btn--default">Create Category</button>
+      </div>
+      <div class="glinz-categories-list_content--main">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 glinz-table">
+  
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+          <!-- Position Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef class="glin-table-header"> Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element" class="glinz-table--actions"> 
+              <button (click)="onEditClick(element._id)" mat-fab extended>
+                <mat-icon svgIcon="appEdit" class="glinz-table--edit"></mat-icon>
+              </button>
+              <button (click)="onDeleteClick(element._id)" mat-fab extended>
+                <mat-icon svgIcon="appDelete" class="glinz-table--delete"></mat-icon>
+              </button>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+  
+    
+    

@@ -1,0 +1,86 @@
+<div class="glinz-header-filter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</div>
+<div class="glinz-products">
+    <div class="container glinz-products_container">
+        <div class="glinz-products_breadcrumb">
+            <h3>Home | Gold</h3>
+            <h2>Gold | 4479 DESIGNS</h2>
+        </div>
+        <div *ngIf="productsList.length > 0" class="glinz-products_items row">
+            <div *ngFor="let product of productsList" class="col-sm-3">
+                <div class="glinz-products_item">
+                    <div class="glinz-products_item-icons">
+                        <mat-icon>favorite_outlined</mat-icon>
+                    </div>
+                    <div class="glinz-products_item-img">
+                        <img [src]="imgUrl + product.image" alt="">
+                    </div>
+                    <div class="glinz-products_item-content">
+                        <p>{{ product.product }}</p>
+                        <h4>₹ {{ product.price }}</h4>
+                        <button [routerLink]="'/product-details/' + product._id">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-3">
+                <div class="glinz-products_item">
+                    <div class="glinz-products_item-icons">
+                        <mat-icon>favorite_outlined</mat-icon>
+                    </div>
+                    <div class="glinz-products_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/501920DBQABA00_1.jpg?impolicy=pqmed&imwidth=640" alt="">
+                    </div>
+                    <div class="glinz-products_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="glinz-products_item">
+                    <div class="glinz-products_item-icons">
+                        <mat-icon>favorite_outlined</mat-icon>
+                    </div>
+                    <div class="glinz-products_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/502314SSJAGA00_1.jpg?impolicy=pqmed&imwidth=640" alt="">
+                    </div>
+                    <div class="glinz-products_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="glinz-products_item">
+                    <div class="glinz-products_item-icons">
+                        <mat-icon>favorite_outlined</mat-icon>
+                    </div>
+                    <div class="glinz-products_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/503216SEDAGA00_1.jpg?impolicy=pqmed&imwidth=640" alt="">
+                    </div>
+                    <div class="glinz-products_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div *ngIf="productsList.length == 0">
+            No products found...
+        </div>
+    </div>
+</div>

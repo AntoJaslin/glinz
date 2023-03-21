@@ -1,0 +1,188 @@
+<div class="glinz-product-edit">
+    <div class="glinz-product-edit_title">
+        <h1>Edit product</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam suscipit doloremque temporibus minus nam tempore eum, quia tenetur a eveniet neque natus pariatur alias rem voluptatibus fugiat repellendus impedit?</div>
+    </div>
+    <div class="glinz-product-edit_form">
+        <form
+            [formGroup]="editProductForm"
+            (ngSubmit)="onFormSubmit(editProductForm.value)"
+            class="glinz-product-edit_form--view"
+            >
+            <div class="row glinz-product-edit_form--fields">
+                <div class="col-sm-6">
+                    <label for="productNameInput">Product Name</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Product Name"
+                        formControlName="productNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['productNameInput'].invalid && (editProductForm.controls['productNameInput'].dirty || editProductForm.controls['productNameInput'].touched) && editProductForm.controls['productNameInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="descriptionInput">Description</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Description"
+                        formControlName="descriptionInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['descriptionInput'].invalid && (editProductForm.controls['descriptionInput'].dirty || editProductForm.controls['descriptionInput'].touched) && editProductForm.controls['descriptionInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="priceInput">Price</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Price"
+                        formControlName="priceInput"
+                        matInput
+                        />
+                        <mat-icon svgIcon="appRupee" matSuffix></mat-icon>
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['priceInput'].invalid && (editProductForm.controls['priceInput'].dirty || editProductForm.controls['priceInput'].touched) && editProductForm.controls['priceInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="categoryInput">Category</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="categoryInput" placeholder="Category">
+                          <mat-option *ngFor="let category of productCategories" [value]="category._id">{{ category.category }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['categoryInput'].invalid && (editProductForm.controls['categoryInput'].dirty || editProductForm.controls['categoryInput'].touched) && editProductForm.controls['categoryInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="subCategoryInput">Sub Category</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="subCategoryInput" placeholder="Sub Category">
+                          <mat-option *ngFor="let subcategory of subCategories" [value]="subcategory">{{ subcategory }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['subCategoryInput'].invalid && (editProductForm.controls['categoryInput'].dirty || editProductForm.controls['subCategoryInput'].touched) && editProductForm.controls['subCategoryInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="quantityInput">Quantity</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Quantity"
+                        formControlName="quantityInput"
+                        matInput
+                        type="number"
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['quantityInput'].invalid && (editProductForm.controls['quantityInput'].dirty || editProductForm.controls['quantityInput'].touched) && editProductForm.controls['quantityInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="purityInput">Purity</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Purity"
+                        formControlName="purityInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['purityInput'].invalid && (editProductForm.controls['purityInput'].dirty || editProductForm.controls['purityInput'].touched) && editProductForm.controls['purityInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="productTypeInput">Product Type</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="productTypeInput" placeholder="Product Type">
+                          <mat-option *ngFor="let type of productTypes" [value]="type._id">{{ type.type }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['productTypeInput'].invalid && (editProductForm.controls['productTypeInput'].dirty || editProductForm.controls['productTypeInput'].touched) && editProductForm.controls['productTypeInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerTypeInput">Offer Type</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer Type"
+                        formControlName="offerTypeInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerNameInput">Offer Name</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer Name"
+                        formControlName="offerNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerInput">Offer</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer"
+                        formControlName="offerInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="genderInput">Gender</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="genderInput" placeholder="Gender">
+                          <mat-option *ngFor="let gender of genders" [value]="gender.key">{{ gender.value }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="editProductForm.controls['genderInput'].invalid && (editProductForm.controls['genderInput'].dirty || editProductForm.controls['genderInput'].touched) && editProductForm.controls['genderInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="imageInput">Image</label>
+                    <input type="file" formControlName="imageInput" multiple (change)="selectImage($event)">
+                    <img class="glinz-product-edit_form--img" [src]="imgUrl" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <label for="statusInput">Status</label>
+                    <mat-button-toggle-group formControlName="statusInput">
+                        <mat-button-toggle class="glinz-toggle-btn--active" value="active">Active</mat-button-toggle>
+                        <mat-button-toggle class="glinz-toggle-btn--inactive" value="inactive">Inactive</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            
+            <div class="glinz-product-edit_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                <!-- <button mat-stroked-button (click)="onFormReset($event)" class="glinz-btn--reset">Reset</button> -->
+            </div>
+        </form>
+    </div>
+</div>

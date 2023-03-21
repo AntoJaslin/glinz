@@ -1,0 +1,24 @@
+.glinz-btn {
+    min-width: 30px;
+    color: #fff;
+    font-family: 'Poppins', 'sans-serif';
+
+    &--default {
+        @extend .glinz-btn;
+        background-color: #4154f1;
+    }
+
+    &--submit {
+        @extend .glinz-btn;
+        background-color: #4154f1;
+    }
+    &--reset {
+        @extend .glinz-btn;
+        background-color: #6c757d;
+    }
+
+    &--cancel {
+        @extend .glinz-btn;
+        background-color: #6c757d;
+    }
+}

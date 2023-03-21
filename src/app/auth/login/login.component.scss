@@ -1,0 +1,65 @@
+.glinz-login-content {
+
+    &--row {
+        width: 100%;
+        margin-left: 0px;
+        &_right {
+            padding: 20px 40px;
+
+            h5 {
+                color: #832729;
+                font-size: 30px;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            button {
+                background-color: #832729;
+                border: 0.01em solid #832729;
+                border-radius: 5px;
+                box-shadow: none;
+                color: #fff;
+                cursor: pointer;
+                height: 50px;
+                line-height: 1em;
+                padding: 0.875em 1.875em;
+                position: relative;
+                text-align: center;
+                transition: color .15s
+            }
+        }
+        &_left {
+            padding: 0px;
+            img {
+                height: 500px;
+                width: 100%;
+            }
+        }
+    }
+    
+    &_btns {
+        text-align: left;
+    }
+    &_link {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #f1a051;
+        }
+    }
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #66083b !important;
+}
+
+::ng-deep {
+    .mat-dialog-content {
+        max-height: none !important;
+        height: 500px;
+    }
+}

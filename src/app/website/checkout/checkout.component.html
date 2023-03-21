@@ -1,0 +1,115 @@
+<div class="glinz-checkout-details">
+    <div class="container glinz-checkout-details_content">
+        <div class="row">
+            <div class="col-sm-8 ">
+                <div class="row">
+                    <div class="col-sm-12 glinz-checkout-details_title">
+                        <h3>Place your order!</h3>
+                    </div>
+                    <div class="col-sm-12">
+                        <h4><b>Personal Information</b></h4>
+                        <div class="row">
+                            <div class="col-sm-6">Name:</div>
+                            <div class="col-sm-6">{{personalInfo.name}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">Email ID:</div>
+                            <div class="col-sm-6">{{personalInfo.email}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">Phone:</div>
+                            <div class="col-sm-6">{{personalInfo.phone}}</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <h4><b>Delivery Information</b></h4>
+                        <form
+                            [formGroup]="addressForm"
+                            (ngSubmit)="onFormSubmit(addressForm.value)"
+                            class="glinz-checkout-details_form--view"
+                            >
+                            <div class="row glinz-checkout-details_form--fields">
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label for="address1Input">Address 1</label>
+                                            <mat-form-field
+                                                class="glinz-input"
+                                                floatLabel="never"
+                                                appearance="outline"
+                                            >
+                                                <input
+                                                placeholder="Address 1"
+                                                formControlName="address1Input"
+                                                matInput
+                                                />
+                                            </mat-form-field>
+                                            <mat-error *ngIf="addressForm.controls['address1Input'].invalid && (addressForm.controls['address1Input'].dirty || addressForm.controls['address1Input'].touched) && addressForm.controls['address1Input'].errors?.['required']">This field is required</mat-error>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="address2Input">Address 2</label>
+                                            <mat-form-field
+                                                class="glinz-input"
+                                                floatLabel="never"
+                                                appearance="outline"
+                                            >
+                                                <input
+                                                placeholder="Address 2"
+                                                formControlName="address2Input"
+                                                matInput
+                                                />
+                                            </mat-form-field>
+                                            <mat-error *ngIf="addressForm.controls['address2Input'].invalid && (addressForm.controls['address2Input'].dirty || addressForm.controls['address2Input'].touched) && addressForm.controls['address2Input'].errors?.['required']">This field is required</mat-error>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="stateInput">State</label>
+                                            <mat-form-field
+                                                class="glinz-input"
+                                                floatLabel="never"
+                                                appearance="outline"
+                                            >
+                                                <input
+                                                placeholder="State"
+                                                formControlName="stateInput"
+                                                matInput
+                                                />
+                                            </mat-form-field>
+                                            <mat-error *ngIf="addressForm.controls['stateInput'].invalid && (addressForm.controls['stateInput'].dirty || addressForm.controls['stateInput'].touched) && addressForm.controls['stateInput'].errors?.['required']">This field is required</mat-error>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="pincodeInput">Pincode</label>
+                                            <mat-form-field
+                                                class="glinz-input"
+                                                floatLabel="never"
+                                                appearance="outline"
+                                            >
+                                                <input
+                                                placeholder="Pincode"
+                                                formControlName="pincodeInput"
+                                                matInput
+                                                />
+                                            </mat-form-field>
+                                            <mat-error *ngIf="addressForm.controls['pincodeInput'].invalid && (addressForm.controls['pincodeInput'].dirty || addressForm.controls['pincodeInput'].touched) && addressForm.controls['pincodeInput'].errors?.['required']">This field is required</mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="glinz-checkout-details_form--btn">
+                                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                                <button mat-stroked-button (click)="onFormReset($event)" class="glinz-btn--reset">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12"><button class="btn-buy-now" mat-flat-button>Checkout</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

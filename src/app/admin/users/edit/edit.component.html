@@ -1,0 +1,73 @@
+<div class="glinz-user-edit">
+    <div class="glinz-user-edit_title">
+        <h1>Edit user</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam suscipit doloremque temporibus minus nam tempore eum, quia tenetur a eveniet neque natus pariatur alias rem voluptatibus fugiat repellendus impedit?</div>
+    </div>
+    <div class="glinz-user-edit_form">
+        <form
+            [formGroup]="editUserForm"
+            (ngSubmit)="onFormSubmit(editUserForm.value)"
+            class="glinz-user-edit_form--view"
+            >
+            <div class="row glinz-user-edit_form--fields">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="userNameInput">Name</label>
+                            <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Name"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="editUserForm.controls['userNameInput'].invalid && 
+                        (editUserForm.controls['userNameInput'].dirty || 
+                        editUserForm.controls['userNameInput'].touched) && 
+                        editUserForm.controls['userNameInput'].errors?.['required']">
+                        This field is required</mat-error>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="emailInput">Email</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Email"
+                                formControlName="emailInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="editUserForm.controls['emailInput'].invalid && (editUserForm.controls['emailInput'].dirty || editUserForm.controls['emailInput'].touched) && editUserForm.controls['emailInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phoneInput">Phone Number</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Phone"
+                                formControlName="phoneInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="editUserForm.controls['phoneInput'].invalid && (editUserForm.controls['phoneInput'].dirty || editUserForm.controls['phoneInput'].touched) && editUserForm.controls['phoneInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glinz-user-edit_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<!-- <h1 mat-dialog-title>Dialog with elements</h1> -->
+<div mat-dialog-content class="glinz-login-content">
+    <div class="row glinz-login-content--row">
+        <div *ngIf="isLogin" class="col-sm-8 glinz-login-content--row_right">
+            <h5>Login</h5>
+            <form [formGroup]="loginForm"
+            (ngSubmit)="onFormSubmit(loginForm.value)"
+            class="glinz-login--content_form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="userNameInput">Username</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Username"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="loginForm.controls['userNameInput'].invalid && (loginForm.controls['userNameInput'].dirty || loginForm.controls['userNameInput'].touched) && loginForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="passwordInput">Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Password"
+                            formControlName="passwordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="loginForm.controls['passwordInput'].invalid && (loginForm.controls['passwordInput'].dirty || loginForm.controls['passwordInput'].touched) && loginForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                </div>
+                <div class="row m-t-10">
+                    <div class="col-sm-6 glinz-login-content_btns">
+                        <button mat-stroked-button class="glinz-btn--submit">Login</button>
+                    </div>
+                    <div class="col-sm-6 glinz-login-content_link">
+                        <a (click)="forgotPassword()">Forgot Password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="isForgot" class="col-sm-8 glinz-login-content--row_right">
+            <h5>Forgot Password?</h5>
+            <form [formGroup]="forgotPasswordForm"
+            (ngSubmit)="onForgotPasswordFormSubmit(forgotPasswordForm.value)"
+            class="glinz-login--content_form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="userNameInput">Username</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Username"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="forgotPasswordForm.controls['userNameInput'].invalid && (forgotPasswordForm.controls['userNameInput'].dirty || forgotPasswordForm.controls['userNameInput'].touched) && forgotPasswordForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                </div>
+                <div class="row m-t-10">
+                    <div class="col-sm-6 glinz-login-content_btns">
+                        <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                    </div>
+                    <div class="col-sm-6 glinz-login-content_link">
+                        <a (click)="onBack()">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="isChange" class="col-sm-8 glinz-login-content--row_right">
+            <h5>Change Password</h5>
+            <form [formGroup]="changePasswordForm"
+            (ngSubmit)="onChangePasswordFormSubmit(changePasswordForm.value)"
+            class="glinz-login--content_form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="passwordInput">Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Password"
+                            formControlName="passwordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="changePasswordForm.controls['passwordInput'].invalid && (changePasswordForm.controls['passwordInput'].dirty || changePasswordForm.controls['passwordInput'].touched) && changePasswordForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="confirmPasswordInput">Confirm Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Confirm Password"
+                            formControlName="confirmPasswordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="changePasswordForm.controls['confirmPasswordInput'].invalid && (changePasswordForm.controls['confirmPasswordInput'].dirty || changePasswordForm.controls['confirmPasswordInput'].touched) && changePasswordForm.controls['confirmPasswordInput'].errors?.['required']">This field is required</mat-error>
+                        <mat-error *ngIf="hasErrorPassword('confirmPasswordInput' ,'mustMatch')">Password doesn't match!</mat-error>
+                    </div>
+                </div>
+                <div class="row m-t-10">
+                    <div class="col-sm-6 glinz-login-content_btns">
+                        <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                    </div>
+                    <div class="col-sm-6 glinz-login-content_link">
+                        <a (click)="onBack()">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4 glinz-login-content--row_left">
+            <img src="assets/images/layout/login.avif" alt="">
+        </div>
+    </div>
+</div>
+<!-- <div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->

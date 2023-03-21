@@ -1,0 +1,92 @@
+.glinz-cart-details {
+
+    &_content {
+        background-color: #fff;
+        border-radius: 5px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+
+        .img-100 {
+            width: 100%;
+        }
+    }
+
+    &_image {
+        margin-top: 20px;
+
+        .bread-crumb {
+            font-weight: 500;
+            margin-bottom: 20px;
+
+            .current {
+                color: #f1a051;
+            }
+        }
+    }
+
+    &_pricing {
+        margin-top: 20px;
+    }
+
+    &_top {
+        p {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-weight: 600;
+            letter-spacing: .5px;
+            color: #66083b;
+        }
+    }
+
+    &_bottom { 
+        p {
+            font-size: 13px;
+        }
+
+        &-price {
+            font-weight: 500;
+            margin-top: 20px;
+
+            .label {
+                font-size: 14px;
+            }
+            .price {
+                font-size: 25px;
+            }
+
+        }
+
+        &-quantity {
+            .mat-mini-fab {
+                width: 35px;
+                height: 35px;
+                background-color: #f1a051;
+
+                ::ng-deep .mat-button-wrapper {
+                    padding: 6px 0px;
+                }
+            }
+            
+            ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+                padding: 10px;
+                width: 30px;
+            }
+            .mat-form-field {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+.glinz-product-details_image--img {
+    width: 80%;
+    height: 400px;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}

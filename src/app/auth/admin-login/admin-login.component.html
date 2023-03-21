@@ -1,0 +1,51 @@
+<div class="glinz-admin-login">
+    <div class="glinz-admin-login--card">
+        <div class="glinz-admin-login--card_title">
+            <h1>GZAdmin</h1>
+        </div>
+        <div class="glinz-admin-login--card_content">
+            <h5>Admin Login</h5>
+            <form [formGroup]="adminLoginForm"
+            (ngSubmit)="onFormSubmit(adminLoginForm.value)"
+            class="glinz-admin-login--card_form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="userNameInput">Username</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Username"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="adminLoginForm.controls['userNameInput'].invalid && (adminLoginForm.controls['userNameInput'].dirty || adminLoginForm.controls['userNameInput'].touched) && adminLoginForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="passwordInput">Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Password"
+                            formControlName="passwordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="adminLoginForm.controls['passwordInput'].invalid && (adminLoginForm.controls['passwordInput'].dirty || adminLoginForm.controls['passwordInput'].touched) && adminLoginForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 glinz-admin-login--card_btns">
+                        <button mat-stroked-button class="glinz-btn--submit">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

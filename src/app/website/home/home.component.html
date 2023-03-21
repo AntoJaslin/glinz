@@ -1,0 +1,370 @@
+<section style="height: auto;">
+    <mat-carousel
+      timings="250ms ease-in"
+      [autoplay]="true"
+      [interval]="5000"
+      color="accent"
+      maxWidth="auto"
+      [proportion]="25"
+      [slides]="5"
+      [loop]="true"
+      [hideArrows]="false"
+      [hideIndicators]="false"
+      [useKeyboard]="true"
+      [useMouseWheel]="false"
+      orientation="ltr"
+    >
+      <mat-carousel-slide
+        #matCarouselSlide
+        *ngFor="let slide of slides; let i = index"
+        [image]="slide.image"
+        overlayColor="#00000040"
+        [hideOverlay]="false"
+      ></mat-carousel-slide>
+    </mat-carousel>
+</section>
+<section class="glinz-categories">
+    <div class="glinz-categories_container container">
+        <div class="glinz-categories_title">
+            <h2>Shop By Category</h2>
+            <p>Browse through your favourite categories. We've got them all!</p>
+        </div>
+        <hr>
+        <div class="glinz-categories_items row">
+            <div class="col-sm-2" *ngFor="let category of allCategories">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img [src]="imgUrl + category.image" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">{{category.category}}</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Pendant.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Ring.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Mangalsutra.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Neckwear.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Earrings.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- <div class="glinz-categories_items row">
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/CoupleRing.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Chain.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Bangle.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/Bracelet.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/NosePin.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="glinz-categories_item">
+                    <div class="glinz-categories_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByCategory/PendantSet.webp" alt="">
+                    </div>
+                    <div class="glinz-categories_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<section class="glinz-collection">
+    <div class="glinz-collection_container container">
+        <div class="glinz-collection_title">
+            <h2>Shop By Collection</h2>
+            <p>Whatever the occasion, we've got a beautiful piece of jewellery for you.</p>
+        </div>
+        <hr>
+        <div class="row glinz-collection_items">
+            <div class="col-sm-4">
+                <div class="glinz-collection_item">
+                    <div class="glinz-collection_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/5b553a40-aa8e-42ee-a89b-f69a898dbe8f/410x410_JoyOfDressing_Nyusha.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-5b553a40-aa8e-42ee-a89b-f69a898dbe8f-okfhBL1" alt="">
+                    </div>
+                    <div class="glinz-collection_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-collection_item">
+                    <div class="glinz-collection_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/93176607-190b-4baf-bd81-5770efbe1e50/410x410_Evil_Eye.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-93176607-190b-4baf-bd81-5770efbe1e50-okfhG1o" alt="">
+                    </div>
+                    <div class="glinz-collection_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-collection_item">
+                    <div class="glinz-collection_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/ce8b98fc-8a4e-42e0-a53a-a7af778855c3/410x410_D_Dor.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-ce8b98fc-8a4e-42e0-a53a-a7af778855c3-okfhK20" alt="">
+                    </div>
+                    <div class="glinz-collection_item-content">
+                        <h4 class="text-normal-bold">Gold Coins</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="banner">
+    <div class="container banner-img">
+        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/c6d65b68-9a34-434a-96bf-4799e498f5b8/desktop/giftingbannernew.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-c6d65b68-9a34-434a-96bf-4799e498f5b8-desktop-ogpCZuR" alt="">
+    </div>
+</section>
+<section class="glinz-top-sellers">
+    <div class="container glinz-top-sellers_container">
+        <div class="glinz-top-sellers_title">
+            <h2>Top Sellers</h2>
+            <p>Check out the products that our customers love the most</p>
+        </div>
+        <hr>
+        <div class="glinz-top-sellers_items row">
+            <div class="col-sm-3">
+                <div class="glinz-top-sellers_item">
+                    <div class="ribbon ribbon-top-right"><span>Top Seller</span></div>
+                    <div class="glinz-top-sellers_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/510433SNAAGA00_1.jpg?impolicy=pqmed&imwidth=480" alt="">
+                    </div>
+                    <div class="glinz-top-sellers_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="glinz-top-sellers_item">
+                    <div class="ribbon ribbon-top-right"><span>Top Seller</span></div>
+                    <div class="glinz-top-sellers_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/510783PPAAAA00_1.jpg?impolicy=pqmed&imwidth=480" alt="">
+                    </div>
+                    <div class="glinz-top-sellers_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="glinz-top-sellers_item">
+                    <div class="ribbon ribbon-top-right"><span>Top Seller</span></div>
+                    <div class="glinz-top-sellers_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/510433SOAAGA00_1.jpg?impolicy=pqmed&imwidth=480" alt="">
+                    </div>
+                    <div class="glinz-top-sellers_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="glinz-top-sellers_item">
+                    <div class="ribbon ribbon-top-right"><span>Top Seller</span></div>
+                    <div class="glinz-top-sellers_item-img">
+                        <img src="https://staticimg.titan.co.in/Mia/Catalog/552811NSYAE22_1.jpg?impolicy=pqmed&imwidth=480" alt="">
+                    </div>
+                    <div class="glinz-top-sellers_item-content">
+                        <p>Simple 22 Karat Yellow Gold Floral Stud Earrings</p>
+                        <h4>₹ 7310</h4>
+                        <button>Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="glinz-new">
+    <div class="glinz-new_container container">
+        <div class="glinz-new_title">
+            <h2>New For You!</h2>
+            <p>Our latest releases, just for you!</p>
+        </div>
+        <hr>
+        <div class="row glinz-new_items">
+            <div class="col-sm-4">
+                <div class="glinz-new_item">
+                    <div class="glinz-new_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/c8e1a738-c330-4a73-8c37-2c5280b60b33/aveer.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-c8e1a738-c330-4a73-8c37-2c5280b60b33-ojwUF18" alt="">
+                    </div>
+                    <div class="glinz-new_item-content">
+                        <a href="#">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-new_item">
+                    <div class="glinz-new_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/4eb97f23-a329-4723-a9ad-ac0c91eecd73/alekhya.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-4eb97f23-a329-4723-a9ad-ac0c91eecd73-ojwUNkJ" alt="">
+                    </div>
+                    <div class="glinz-new_item-content">
+                        <a href="#">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-new_item">
+                    <div class="glinz-new_item-img">
+                        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/ce8b98fc-8a4e-42e0-a53a-a7af778855c3/410x410_D_Dor.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-ce8b98fc-8a4e-42e0-a53a-a7af778855c3-okfhK20" alt="">
+                    </div>
+                    <div class="glinz-new_item-content">
+                        <a href="#">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="glinz-gender">
+    <div class="glinz-gender_container container">
+        <div class="glinz-gender_title">
+            <h2>Shop By gender</h2>
+            <p>Explore our latest designs curated just for you!</p>
+        </div>
+        <hr>
+        <div class="row glinz-gender_items">
+            <div class="col-sm-4">
+                <div class="glinz-gender_item">
+                    <div class="glinz-gender_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByGender/Woman.jpg" alt="">
+                    </div>
+                    <div class="glinz-gender_item-content">
+                        <h4 class="text-normal-bold">Women</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-gender_item">
+                    <div class="glinz-gender_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByGender/Men.jpg" alt="">
+                    </div>
+                    <div class="glinz-gender_item-content">
+                        <h4 class="text-normal-bold">Men</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="glinz-gender_item">
+                    <div class="glinz-gender_item-img">
+                        <img src="https://staticimg.titan.co.in/Tanishq/Banners/home/ShopByGender/kid.jpg" alt="">
+                    </div>
+                    <div class="glinz-gender_item-content">
+                        <h4 class="text-normal-bold">Kids</h4>
+                        <a href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

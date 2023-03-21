@@ -1,0 +1,115 @@
+<!-- <h1 mat-dialog-title>Dialog with elements</h1> -->
+<div mat-dialog-content class="glinz-signup-content">
+    <div class="row glinz-signup-content--row">
+        <div class="col-sm-8 glinz-signup-content--row_right">
+            <h5>Signup</h5>
+            <form [formGroup]="signupForm"
+            (ngSubmit)="onFormSubmit(signupForm.value)"
+            class="glinz-signup--content_form">
+                <div class="row">
+                    <!-- <div class="col-sm-12">
+                        <label for="userNameInput">Email</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Username"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['userNameInput'].invalid && (signupForm.controls['userNameInput'].dirty || signupForm.controls['userNameInput'].touched) && signupForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                    </div> -->
+                    <div class="col-sm-12">
+                        <label for="userNameInput">Name</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Name"
+                            formControlName="userNameInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['userNameInput'].invalid && (signupForm.controls['userNameInput'].dirty || signupForm.controls['userNameInput'].touched) && signupForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="emailInput">Email</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Email"
+                            formControlName="emailInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['emailInput'].invalid && (signupForm.controls['emailInput'].dirty || signupForm.controls['emailInput'].touched) && signupForm.controls['emailInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="phoneInput">Phone Number</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Phone"
+                            formControlName="phoneInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['phoneInput'].invalid && (signupForm.controls['phoneInput'].dirty || signupForm.controls['phoneInput'].touched) && signupForm.controls['phoneInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="passwordInput">Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Password"
+                            formControlName="passwordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['passwordInput'].invalid && (signupForm.controls['passwordInput'].dirty || signupForm.controls['passwordInput'].touched) && signupForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                    </div>
+                    <!-- <div class="col-sm-12">
+                        <label for="passwordInput">Password</label>
+                        <mat-form-field
+                            class="glinz-input"
+                            floatLabel="never"
+                            appearance="outline"
+                        >
+                            <input
+                            placeholder="Password"
+                            formControlName="passwordInput"
+                            matInput
+                            />
+                        </mat-form-field>
+                        <mat-error *ngIf="signupForm.controls['passwordInput'].invalid && (signupForm.controls['passwordInput'].dirty || signupForm.controls['passwordInput'].touched) && signupForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 glinz-signup--content_btns">
+                        <button mat-stroked-button class="glinz-btn--submit">Signup</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4 glinz-signup-content--row_left">
+            <img src="assets/images/layout/login.avif" alt="">
+        </div>
+    </div>
+</div>
+<!-- <div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->

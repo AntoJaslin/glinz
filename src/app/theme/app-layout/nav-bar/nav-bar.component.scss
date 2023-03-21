@@ -1,5 +1,189 @@
 .glinz-nav {
-    background-color: #6d0133;
+    background-color: #66083b;
     color: #f2e9e9;
-    padding: 20px;
+    padding: 10px;
+
+    .glinz-logo img {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    &_content {
+        align-items: center;
+    }
+
+    &_right-items {
+        display: flex;
+        align-items: center;
+    }
+
+    &_right-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #f2e9e9;
+        cursor: pointer;
+        position: relative;
+
+        .account-box {
+            //display: none;
+            background-color: #fff;
+            color: #000;
+            position: absolute;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 3px 20px rgb(102 8 59 / 80%);
+            left: 50%;
+            min-width: 280px;
+            // opacity: 0;
+            padding: 20px;
+            position: absolute;
+            text-align: center;
+            top: 10px;
+            -webkit-transform: translate(-50%,40px);
+            transform: translate(-50%,40px);
+            transition: all .3s;
+            z-index: 20;
+
+            h4 {
+                font-size: 24px;
+                font-weight: 500;
+                font-family: 'Poppins', 'sans-serif';
+            }
+
+            h6 {
+                font-size: 12px;
+                font-weight: 500;
+                margin-bottom: 15px;
+                font-family: 'Poppins', 'sans-serif';
+            }
+
+            .mat-stroked-button {
+                border-color: #66083b;
+                color: #66083b;
+                padding: 2px 20px;
+                font-size: 12px;
+                font-family: 'Poppins', 'sans-serif';
+                margin-right: 5px;
+            }
+
+            .mat-button {
+                background-color: #66083b;
+                color: #fff;
+                padding: 2px 20px;
+                font-size: 12px;
+                font-family: 'Poppins', 'sans-serif';
+                margin-left: 5px;
+            }
+
+            &--item {
+                display: block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: #66083b;
+                border-bottom: 1px solid #c2c3c4;
+            }
+        }
+    }
+
+    .glinz-search {
+        button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        .example-form {
+            min-width: 150px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .example-full-width {
+            width: 100%;
+        }
+
+        ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+            background-color: #f2e9e9;
+            border-radius: 5px;
+            color: #66083b;
+        }
+
+        ::ng-deep {
+            .mat-input-element {
+                color: #66083b;
+                caret-color: #f1a051;
+                font-family: 'Poppins', sans-serif !important;
+            }
+        }
+
+        .mat-icon {
+            color: #66083b;
+        }
+
+        .mat-focused .mat-icon {
+            color: #66083b;
+        }
+
+        ::ng-deep .mat-form-field-wrapper {
+            padding-bottom: 0px;
+        }
+    }
+}
+
+.glinz-bottom-nav {
+    background-color: #fff;
+    &_item {
+        text-align: center;
+        // text-transform: uppercase;
+        // padding-top: 10px;
+        // padding-bottom: 10px;
+        // cursor: pointer;
+        // border-bottom: 3px solid #fff;
+
+        .mat-button {
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 400;
+            border-bottom: 3px solid #fff;
+        }
+    }
+    &_item:hover {
+        border-bottom: 3px solid #f1a051;
+    }
+}
+.d-none {
+    display: none;
+}
+::ng-deep {
+    .mat-menu-panel {
+        min-width: 300px !important;
+        max-width: none !important;
+    }
+    .mat-menu-content:not(:empty) {
+        padding: 10px !important;
+    }
+    .mat-menu-item {  
+        text-transform: uppercase;
+        background-color: #fff !important;
+        a {
+            color: #000 !important;
+        }
+        a:hover {
+            color: #66083b;
+        }
+    }
+
+    .mat-menu-item:hover { 
+        background-color: #fff !important;
+        a {
+            color: #66083b !important;
+        }
+    }
 }

@@ -1,0 +1,55 @@
+<div class="glinz-cart-details">
+    <div class="container glinz-cart-details_content">
+        <div class="row">
+            <div class="col-sm-8 ">
+                <div class="row">
+                    <div class="col-sm-12 glinz-cart-details_title">
+                        <h3>My Cart Items</h3>
+                    </div>
+                </div>
+                <div *ngIf="myCart && myCart.length > 0" class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-5"><h4><b>Item</b></h4></div>
+                            <div class="col-sm-3"><h4><b>Quantity</b></h4></div>
+                            <div class="col-sm-3"><h4><b>Total</b></h4></div>
+                        </div>
+                        <hr>
+                        <div class="row" *ngFor="let cartItem of myCart; let ind=index;">
+                            <div class="col-sm-5">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img class="img-100" [src]="imgUrl + cartItem.image" alt="">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h4><b>{{cartItem.product}}</b></h4>
+                                        <p>Price: &#8377; {{cartItem.price}}</p>
+                                        <p>Gold Purity: <b>{{cartItem.purity}}.00 Karat</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>{{cartItem.orderQuantity}}</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>&#8377; {{cartItem.total}}</p>
+                                
+                            </div>
+                            <div class="col-sm-1"><mat-icon (click)="removeCartItem(ind)">delete</mat-icon></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8"></div>
+                            <div class="col-sm-3"><b>&#8377; {{myCartTotal}}</b></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12"><button class="btn-buy-now" mat-flat-button>Checkout</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

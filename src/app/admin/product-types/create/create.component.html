@@ -1,0 +1,62 @@
+<div class="glinz-product-type-create">
+    <div class="glinz-product-type-create_title">
+        <h1>Create Type</h1>
+    </div>
+    <div class="glinz-product-type-create_form">
+        <form
+            [formGroup]="createProductTypeForm"
+            (ngSubmit)="onFormSubmit(createProductTypeForm.value)"
+            class="glinz-product-type-create_form--view"
+            >
+            <div class="row glinz-product-type-create_form--fields">
+                <div class="col-sm-12">
+                    <label for="typeNameInput">Product type</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Product type"
+                        formControlName="typeNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductTypeForm.controls['typeNameInput'].invalid && (createProductTypeForm.controls['typeNameInput'].dirty || createProductTypeForm.controls['typeNameInput'].touched) && createProductTypeForm.controls['typeNameInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-12">
+                    <label for="descriptionInput">Description</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Description"
+                        formControlName="descriptionInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductTypeForm.controls['descriptionInput'].invalid && (createProductTypeForm.controls['descriptionInput'].dirty || createProductTypeForm.controls['descriptionInput'].touched) && createProductTypeForm.controls['descriptionInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-12">
+                    <label for="imageInput">Image</label>
+                    <input type="file" formControlName="imageInput" multiple (change)="selectImage($event)">
+                    <mat-error *ngIf="createProductTypeForm.controls['imageInput'].invalid && (createProductTypeForm.controls['imageInput'].dirty || createProductTypeForm.controls['imageInput'].touched) && createProductTypeForm.controls['imageInput'].errors?.['required']">Category image is required</mat-error>
+                </div>
+                <div class="col-sm-12">
+                    <label for="statusInput">Status</label>
+                    <mat-button-toggle-group formControlName="statusInput">
+                        <mat-button-toggle class="glinz-toggle-btn--active" value="active">Active</mat-button-toggle>
+                        <mat-button-toggle class="glinz-toggle-btn--inactive" value="inactive">Inactive</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            
+            <div class="glinz-product-type-create_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                <button mat-stroked-button mat-dialog-close (click)="dialogClose($event)" class="glinz-btn--cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

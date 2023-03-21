@@ -1,0 +1,48 @@
+@use './core/variables' as var;
+.glinz-search-input {
+  font-family: 'Poppins', sans-serif;
+  
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+
+    .mat-form-field-suffix {
+      top: 0px !important;
+
+      .mat-icon {
+        width: 18px;
+        height: 18px;
+        color: #012970;
+      }
+    }
+  
+    .mat-form-field-infix {
+      padding: 0.6em 0 0.6em 0 !important;
+      border-top: 0.44375em solid transparent !important;
+    }
+  
+    &.mat-form-field {
+      font-size: 0.9rem !important;
+      width: 265px !important;
+    }
+  
+    .mat-form-field-wrapper {
+      background: white;
+      color: black;
+      border-radius: 5px;
+      padding-bottom: 0px !important;
+    }
+    //.mat-form-field-flex:hover {
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: rgb(58, 226, 43) !important;
+    }
+    //}
+    // &[tableInput='true'] {
+    //   ::ng-deep {
+    //     .mat-form-field-appearance-outline .mat-form-field-outline {
+    //       background-color: rgba(4, 55, 82, 0.2);
+    //     }
+    //   }
+    // }
+  }
+  

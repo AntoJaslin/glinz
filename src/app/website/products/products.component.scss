@@ -1,0 +1,69 @@
+.glinz-products {
+    margin-top: 60px;
+    
+    &_items {
+        margin-bottom: 20px;
+        // padding-left: 80px;
+        // padding-right: 80px;
+    }
+
+    &_item {
+        margin-left: auto;
+        margin-right: auto;
+        //width: 160px;
+        border-radius: 5px;
+        border: 1px solid #32323245;
+        position: relative;
+        background-color: #fff;
+        margin-bottom: 15px;
+
+        &-icons {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            .mat-icon {
+                //font-weight: 200;
+                font-size: 18px;
+                color: #66083b;
+                cursor: pointer;
+            }
+        }
+
+        &-img {
+            //width: 160px;
+            height: 250px;
+        }
+
+        &-img img {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        &-content {
+            text-align: center;
+            padding: 10px;
+
+            h4 {
+                margin-top: 13px;
+                margin-bottom: 10px !important;
+            }
+            
+            a {
+                display: inline-block;
+                color: #000;
+                margin-bottom: 10px !important;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #66083b;
+                color: #66083b;
+                background-color: #fff;
+            }
+        }
+    }
+}

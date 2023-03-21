@@ -1,0 +1,86 @@
+<div class="glinz-user-create">
+    <div class="glinz-user-create_title">
+        <h1>Create user</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam suscipit doloremque temporibus minus nam tempore eum, quia tenetur a eveniet neque natus pariatur alias rem voluptatibus fugiat repellendus impedit?</div>
+    </div>
+    <div class="glinz-user-create_form">
+        <form
+            [formGroup]="createUserForm"
+            (ngSubmit)="onFormSubmit(createUserForm.value)"
+            class="glinz-user-create_form--view"
+            >
+            <div class="row glinz-user-create_form--fields">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="userNameInput">Name</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Name"
+                                formControlName="userNameInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="createUserForm.controls['userNameInput'].invalid && (createUserForm.controls['userNameInput'].dirty || createUserForm.controls['userNameInput'].touched) && createUserForm.controls['userNameInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="emailInput">Email</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Email"
+                                formControlName="emailInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="createUserForm.controls['emailInput'].invalid && (createUserForm.controls['emailInput'].dirty || createUserForm.controls['emailInput'].touched) && createUserForm.controls['emailInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="passwordInput">Password</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Password"
+                                formControlName="passwordInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="createUserForm.controls['passwordInput'].invalid && (createUserForm.controls['passwordInput'].dirty || createUserForm.controls['passwordInput'].touched) && createUserForm.controls['passwordInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                        <div class="col-sm-12">
+                            <label for="phoneInput">Phone Number</label>
+                            <mat-form-field
+                                class="glinz-input"
+                                floatLabel="never"
+                                appearance="outline"
+                            >
+                                <input
+                                placeholder="Phone"
+                                formControlName="phoneInput"
+                                matInput
+                                />
+                            </mat-form-field>
+                            <mat-error *ngIf="createUserForm.controls['phoneInput'].invalid && (createUserForm.controls['phoneInput'].dirty || createUserForm.controls['phoneInput'].touched) && createUserForm.controls['phoneInput'].errors?.['required']">This field is required</mat-error>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="glinz-user-create_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                <button mat-stroked-button (click)="onFormReset($event)" class="glinz-btn--reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

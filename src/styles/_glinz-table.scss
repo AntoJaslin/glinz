@@ -1,0 +1,47 @@
+@use './core/variables' as var;
+
+.glinz-table {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: none !important;
+    font-family: 'Poppins', sans-serif;
+
+    .mat-header-cell {
+        font-size: 15px !important;
+        //font-weight: 600;
+        color: #000;
+        //color: var.$primary-clr;
+        //background-color: $secondary-clr;
+    }
+
+    &--actions {
+        .mat-fab.mat-accent {
+            background-color: #fff !important;
+            box-shadow: none !important;
+
+            .mat-icon.glinz-table--edit {
+                color: green;
+                height: 16px;
+                width: 16px;
+            }
+            .mat-icon.glinz-table--delete {
+                color: rgb(128, 19, 0);
+                height: 16px;
+                width: 16px;
+            }
+        }
+        .mat-fab .mat-button-wrapper {
+            padding: 9px 0px !important;
+        }
+        .mat-fab {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            border-radius: 0%;
+        }
+        // .mat-icon {
+        //     height: 18px;
+        //     width: 18px;
+        // }
+    }
+}

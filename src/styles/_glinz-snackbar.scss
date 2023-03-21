@@ -1,0 +1,17 @@
+.glinz-snackbar {
+    &--success {
+        color: #155724;
+        background-color: #d4edda;
+        box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    }
+    &--error {
+        color: #721c24;
+        background-color: #f8d7da;
+        box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    }
+    &--info {
+        color: #062c33;
+        background-color: #d1ecf1;
+        box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    }
+}

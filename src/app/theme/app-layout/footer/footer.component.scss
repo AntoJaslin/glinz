@@ -1,0 +1,22 @@
+.footer {
+    margin-top: 50px;
+    background-color: #f1a051;
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+    &_item {
+        &-link {
+            display: block;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            justify-content: initial;
+            align-items: center;
+            margin-bottom: 10px;
+
+            mat-icon {
+                margin-right: 10px;
+            }
+        }
+    }
+}

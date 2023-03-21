@@ -1,0 +1,84 @@
+<div class="glinz-category-edit">
+    <div class="glinz-category-edit_title">
+        <h1>Edit category</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam suscipit doloremque temporibus minus nam tempore eum, quia tenetur a eveniet neque natus pariatur alias rem voluptatibus fugiat repellendus impedit?</div>
+    </div>
+    <div class="glinz-category-edit_form">
+        <form
+            [formGroup]="editCategoryForm"
+            (ngSubmit)="onFormSubmit(editCategoryForm.value)"
+            class="glinz-category-edit_form--view"
+            >
+            <div class="row glinz-category-edit_form--fields">
+                <div class="col-sm-6">
+                    <label for="categoryNameInput">Category Name</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Category Name"
+                        formControlName="categoryNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editCategoryForm.controls['categoryNameInput'].invalid && (editCategoryForm.controls['categoryNameInput'].dirty || editCategoryForm.controls['categoryNameInput'].touched) && editCategoryForm.controls['categoryNameInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="descriptionInput">Description</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Description"
+                        formControlName="descriptionInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="editCategoryForm.controls['descriptionInput'].invalid && (editCategoryForm.controls['descriptionInput'].dirty || editCategoryForm.controls['descriptionInput'].touched) && editCategoryForm.controls['descriptionInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label>Sub Categories</label>
+                    <mat-chip-list #chipList aria-label="tag selection">
+                        <mat-chip *ngFor="let tag of tags" (removed)="removeChip(tag)">
+                          {{ tag }}
+                          <button matChipRemove>
+                            <mat-icon>cancel</mat-icon>
+                          </button>
+                        </mat-chip>
+                        <input
+                          matInput
+                          placeholder="+ Sub category..."
+                          [matChipInputFor]="chipList"
+                          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                          [matChipInputAddOnBlur]="addOnBlur"
+                          (matChipInputTokenEnd)="addChip($event)"
+                          maxlength="20"
+                          autocomplete="off"
+                        />
+                    </mat-chip-list>
+                    <mat-error *ngIf="editCategoryForm.controls['subCategoriesInput'].invalid && (editCategoryForm.controls['subCategoriesInput'].dirty || editCategoryForm.controls['subCategoriesInput'].touched) && editCategoryForm.controls['subCategoriesInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="imageInput">Image</label>
+                    <input type="file" formControlName="imageInput" multiple (change)="selectImage($event)">
+                    <img class="glinz-category-edit_form--img" [src]="imgUrl" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <label for="statusInput">Status</label>
+                    <mat-button-toggle-group formControlName="statusInput">
+                        <mat-button-toggle class="glinz-toggle-btn--active" value="active">Active</mat-button-toggle>
+                        <mat-button-toggle class="glinz-toggle-btn--inactive" value="inactive">Inactive</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            
+            <div class="glinz-category-edit_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

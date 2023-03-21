@@ -1,3 +1,115 @@
 <nav class="glinz-nav">
-    <div class="glinz-logo">Logo</div>
+    <div class="container">
+        <div class="row glinz-nav_content">
+            <div class="col-sm-2">
+                <div routerLink="/" class="glinz-logo">
+                    <img src="assets/images/Glinz-logo.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="glinz-search">
+                    <form>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <input matInput placeholder="Search for gold jwellery, diamond jwellery and more...">
+                            <mat-icon matSuffix>search</mat-icon>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-4 glinz-nav_right">
+                <div class="row glinz-nav_right-items">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3 glinz-nav_right-item">
+                      <mat-icon (click)="openAccountBox()">person</mat-icon>
+                      Account
+                      <div #accountBox class="account-box d-none">
+                        <div *ngIf="!isLogged">
+                          <h4>MY ACCOUNT</h4>
+                          <h6>LOGIN TO ACCESS YOUR ACCOUNT</h6>
+                          <div>
+                            <button mat-stroked-button (click)="onLoginClick()">LOG IN</button>
+                            <button mat-button (click)="onSignupClick()">SIGN UP</button>
+                          </div>
+                        </div>
+                        <div *ngIf="isLogged">
+                          <a class="account-box--item" routerLink="user-profile">Profile</a>
+                          <a class="account-box--item" routerLink="user-profile">My Orders</a>
+                          <a (click)="onLgoutClick()" class="account-box--item">Logout</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 glinz-nav_right-item"><mat-icon>favorite_border</mat-icon>Wishlist</div>
+                    <div class="col-sm-3 glinz-nav_right-item"><mat-icon>shopping_cart</mat-icon> Cart</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
+<!-- <div class="container-fluid glinz-bottom-nav">
+    <div class="container glinz-bottom-nav_content">
+        <div class="row glinz-bottom-nav_items">
+            <div class="col-sm-2 glinz-bottom-nav_item">All Jwellery</div>
+            <div class="col-sm-2 glinz-bottom-nav_item">Gold</div>
+            <div class="col-sm-2 glinz-bottom-nav_item">Diamond</div>
+            <div class="col-sm-2 glinz-bottom-nav_item">Earrings</div>
+            <div class="col-sm-2 glinz-bottom-nav_item">Rings</div>
+            <div class="col-sm-2 glinz-bottom-nav_item">Collections</div>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid glinz-bottom-nav">
+    <div class="container glinz-bottom-nav_content">
+        <div class="row glinz-bottom-nav_items">
+            <div class="col-sm-2 glinz-bottom-nav_item" *ngFor="let menuItem of menuList">
+                <ng-container >
+
+                    <ng-container *ngIf="!menuItem.children">
+                      <a class="nav-link">
+                        <span class="icon fa" [ngClass]="menuItem.icon"></span>
+                        <span class="text-holder">{{menuItem.label}}</span>
+                      </a>
+                    </ng-container>
+                    <ng-container *ngIf="menuItem.children.length > 0">
+                      <button mat-button [matMenuTriggerFor]="levelOne" #levelOneTrigger="matMenuTrigger" (mouseenter)="levelOneTrigger.openMenu()">
+                        <span class="icon fa" [ngClass]="menuItem.icon"></span>
+                        <span>{{menuItem.label}}
+                          <i class="fa fa-chevron-down"></i>
+                        </span>
+                      </button>
+                  
+                      <mat-menu #levelOne="matMenu" direction="down" yPosition="below">
+                        <span (mouseleave)="levelOneTrigger.closeMenu()">
+                        <ng-container *ngFor="let childL1 of menuItem.children">
+                          <li class="p-0" *ngIf="!childL1.children" mat-menu-item>
+                            <a [routerLink]="'products/' + menuItem.id" class="nav-link">{{childL1}}
+                              <i *ngIf="childL1.icon" [ngClass]="childL1.icon"></i>
+                            </a>
+                          </li>
+                          <ng-container *ngIf="childL1.children && childL1.children.length > 0">
+                            <li mat-menu-item [matMenuTriggerFor]="levelTwo">
+                              <span class="icon fa" [ngClass]="childL1.icon"></span>
+                              <span>{{childL1}}</span>
+                            </li>
+                  
+                            <mat-menu #levelTwo="matMenu">
+                              <ng-container *ngFor="let childL2 of childL1.children">
+                                <li class="p-0" mat-menu-item>
+                                  <a class="nav-link">{{childL2}}
+                                    <i *ngIf="childL2.icon" [ngClass]="childL2.icon"></i>
+                                  </a>
+                                </li>
+                              </ng-container>
+                            </mat-menu>
+                          </ng-container>
+                        </ng-container>
+                        </span>
+                      </mat-menu>
+                    </ng-container>
+                  
+                  </ng-container>
+            </div>
+
+  </div>
+  </div>
+</div>
+

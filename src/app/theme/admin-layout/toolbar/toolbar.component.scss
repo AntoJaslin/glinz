@@ -1,0 +1,50 @@
+//@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+.mat-toolbar {
+    transition: all 0.5s;
+    background-color: #fff;
+    height: 60px;
+    box-shadow: 0px 2px 20px rgb(1 41 112 / 10%);
+}
+.glinz-toolbar {
+    position: relative;
+    z-index: 2;
+    
+    .row {
+        width: 100%;
+    }
+    &_logo {
+        img {
+            height: 50px;
+        }
+        span {
+            font-size: 26px;
+            font-weight: 700;
+            color: #012970;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+    &_search {
+        .mat-form-field-appearance-outline .mat-form-field-suffix .mat-icon {
+            width: 20px;
+            height: 20px;
+            color: #012970;
+        }
+    }
+    &_right {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        // &--user {
+        //     margin-right: 5px;
+        // }
+
+        .mat-icon {
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            color: #012970;
+            
+        }
+    }
+}

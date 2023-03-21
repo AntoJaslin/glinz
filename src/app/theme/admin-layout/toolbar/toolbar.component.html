@@ -1,0 +1,36 @@
+<mat-toolbar class="glinz-toolbar">
+    <div class="row">
+        <div class="glinz-toolbar_logo col-sm-4">
+            <img src="assets/images/Glinz-admin.png" alt="">
+            <span>GzAdmin</span>
+        </div>
+        <div class="col-sm-4">
+            <mat-form-field
+                class="glinz-search-input"
+                floatLabel="never"
+                appearance="outline"
+            >
+                <input
+                placeholder="Search"
+                matInput
+                />
+                <mat-icon svgIcon="appSearch" matSuffix></mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4 glinz-toolbar_right">
+            <div class="glinz-toolbar_right--icons">
+                <mat-icon matBadge="15" matBadgeColor="primary">notifications_none</mat-icon>
+                <mat-icon svgIcon="appChat" matBadge="20" matBadgeColor="primary"></mat-icon>
+            </div>
+            <div class="glinz-toolbar_right--user">
+                <button mat-icon-button matTooltip="Language" (click)=select.open()>
+                    {{ currentUser.name }}
+                    <mat-select #select>
+                      <!-- <mat-option (click)="changeLang()" value="en">English</mat-option> -->
+                      <mat-option (click)="onUserLogout()" value="de">Logout</mat-option>
+                    </mat-select>
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>

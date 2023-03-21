@@ -1,0 +1,62 @@
+<div class="glinz-product-details">
+    <div class="container glinz-product-details_content">
+        <div *ngIf="productDetails" class="row">
+            <div class="col-sm-6 glinz-product-details_image">
+                <div class="bread-crumb">
+                    Home | Product | <span class="current">{{ productDetails.product }}</span>                    
+                </div>
+                <div class="glinz-product-details_image--img">
+                    <img [src]="imgUrl + productDetails.image" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 glinz-product-details_pricing">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="glinz-product-details_top">
+                            <p>{{ productDetails._id }}</p>
+                            <h2>{{ productDetails.product }} </h2>
+                        </div>
+                        <hr>
+                        <div class="glinz-product-details_bottom">
+                            <p>{{ productDetails.description }}</p>
+                            <div class="glinz-product-details_bottom-price">
+                                <span class="label">Offer Price </span> <span class="price">₹ {{ productDetails.price }}</span>
+                            </div>
+                            <div class="row m-t-10">
+                                <div class="col-sm-3 glinz-product-details_bottom-weight text-small-bold text-center">
+                                    Qty
+                                </div>
+                                <div class="col-sm-12 glinz-product-details_bottom-quantity">
+                                    <button mat-mini-fab (click)="increaseQty()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput [value]="productQty">
+                                    </mat-form-field>
+                                    <button mat-mini-fab (click)="decreaseQty()">
+                                        <mat-icon>remove</mat-icon>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                            <div class="glinz-product-details_bottom-purity">
+                                <p class="text-small-bold">Gold Purity: {{ productDetails.purity }}.00 Karat</p>
+                            </div>
+                            <div class="glinz-product-details_bottom-btns">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button (click)="addToCart(productDetails)" class="btn-cart" mat-stroked-button>Add to cart</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button class="btn-buy-now" mat-flat-button>Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

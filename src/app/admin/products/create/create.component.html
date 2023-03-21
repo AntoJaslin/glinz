@@ -1,0 +1,189 @@
+<div class="glinz-product-create">
+    <div class="glinz-product-create_title">
+        <h1>Create product</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam suscipit doloremque temporibus minus nam tempore eum, quia tenetur a eveniet neque natus pariatur alias rem voluptatibus fugiat repellendus impedit?</div>
+    </div>
+    <div class="glinz-product-create_form">
+        <form
+            [formGroup]="createProductForm"
+            (ngSubmit)="onFormSubmit(createProductForm.value)"
+            class="glinz-product-create_form--view"
+            enctype="multipart/form-data"
+            >
+            <div class="row glinz-product-create_form--fields">
+                <div class="col-sm-6">
+                    <label for="productNameInput">Product Name</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Product Name"
+                        formControlName="productNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['productNameInput'].invalid && (createProductForm.controls['productNameInput'].dirty || createProductForm.controls['productNameInput'].touched) && createProductForm.controls['productNameInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="descriptionInput">Description</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Description"
+                        formControlName="descriptionInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['descriptionInput'].invalid && (createProductForm.controls['descriptionInput'].dirty || createProductForm.controls['descriptionInput'].touched) && createProductForm.controls['descriptionInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="priceInput">Price</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Price"
+                        formControlName="priceInput"
+                        matInput
+                        />
+                        <mat-icon svgIcon="appRupee" matSuffix></mat-icon>
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['priceInput'].invalid && (createProductForm.controls['priceInput'].dirty || createProductForm.controls['priceInput'].touched) && createProductForm.controls['priceInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="quantityInput">Quantity</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Quantity"
+                        formControlName="quantityInput"
+                        matInput
+                        type="number"
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['quantityInput'].invalid && (createProductForm.controls['quantityInput'].dirty || createProductForm.controls['quantityInput'].touched) && createProductForm.controls['quantityInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="categoryInput">Category</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select (selectionChange)="onCategorySelect($event)" formControlName="categoryInput" placeholder="Category">
+                          <mat-option *ngFor="let category of productCategories" [value]="category._id">{{ category.category }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['categoryInput'].invalid && (createProductForm.controls['categoryInput'].dirty || createProductForm.controls['categoryInput'].touched) && createProductForm.controls['categoryInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="subCategoryInput">Sub Category</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="subCategoryInput" placeholder="Sub Category">
+                          <mat-option *ngFor="let subcategory of subCategories" [value]="subcategory">{{ subcategory }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['subCategoryInput'].invalid && (createProductForm.controls['categoryInput'].dirty || createProductForm.controls['subCategoryInput'].touched) && createProductForm.controls['subCategoryInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="purityInput">Purity</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Purity"
+                        formControlName="purityInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['purityInput'].invalid && (createProductForm.controls['purityInput'].dirty || createProductForm.controls['purityInput'].touched) && createProductForm.controls['purityInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="productTypeInput">Product Type</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="productTypeInput" placeholder="Product Type">
+                          <mat-option *ngFor="let type of productTypes" [value]="type._id">{{ type.type }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['productTypeInput'].invalid && (createProductForm.controls['productTypeInput'].dirty || createProductForm.controls['productTypeInput'].touched) && createProductForm.controls['productTypeInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerTypeInput">Offer Type</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer Type"
+                        formControlName="offerTypeInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerNameInput">Offer Name</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer Name"
+                        formControlName="offerNameInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="offerInput">Offer</label>
+                    <mat-form-field
+                        class="glinz-input"
+                        floatLabel="never"
+                        appearance="outline"
+                    >
+                        <input
+                        placeholder="Offer"
+                        formControlName="offerInput"
+                        matInput
+                        />
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <label for="genderInput">Gender</label>
+                    <mat-form-field class="glinz-select" appearance="outline">
+                        <mat-select formControlName="genderInput" placeholder="Gender">
+                          <mat-option *ngFor="let gender of genders" [value]="gender.key">{{ gender.value }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-error *ngIf="createProductForm.controls['genderInput'].invalid && (createProductForm.controls['genderInput'].dirty || createProductForm.controls['genderInput'].touched) && createProductForm.controls['genderInput'].errors?.['required']">This field is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="imageInput">Image</label>
+                    <input type="file" formControlName="imageInput" multiple (change)="selectImage($event)">
+                    <mat-error *ngIf="createProductForm.controls['imageInput'].invalid && (createProductForm.controls['imageInput'].dirty || createProductForm.controls['imageInput'].touched) && createProductForm.controls['imageInput'].errors?.['required']">Product image is required</mat-error>
+                </div>
+                <div class="col-sm-6">
+                    <label for="statusInput">Status</label>
+                    <mat-button-toggle-group formControlName="statusInput">
+                        <mat-button-toggle class="glinz-toggle-btn--active" value="active">Active</mat-button-toggle>
+                        <mat-button-toggle class="glinz-toggle-btn--inactive" value="inactive">Inactive</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            
+            <div class="glinz-product-create_form--btn">
+                <button mat-stroked-button class="glinz-btn--submit">Submit</button>
+                <button mat-stroked-button (click)="onFormReset($event)" class="glinz-btn--reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

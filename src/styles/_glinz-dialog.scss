@@ -1,0 +1,11 @@
+.glinz-dialog {
+    // min-height: 500px;
+    // min-width: 400px;
+    height: auto;
+    width: 800px;
+    .mat-dialog-container {
+        padding: 0px !important;
+        border-radius: 25px !important;
+        overflow: hidden;
+    }
+}
